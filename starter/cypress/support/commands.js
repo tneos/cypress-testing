@@ -23,3 +23,8 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+// Custom command (name of custom command and callback)
+Cypress.Commands.add("getDataTest", dataTestSelector => {
+  return cy.get(`[data-test="${dataTestSelector}"]`);
+});
